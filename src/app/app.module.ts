@@ -8,15 +8,13 @@ import { PrimeModule } from './prime/prime.module';
 import { MainComponent } from './components/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { SwitchThemeComponent } from './components/switch-theme/switch-theme.component';
 import { DatePipe } from '@angular/common'
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    MainComponent,
-    SwitchThemeComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,

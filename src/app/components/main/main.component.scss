@@ -1,0 +1,23 @@
+:host ::ng-deep .p-dropdown {
+    width: 14rem;
+}
+
+p-skeleton {
+    width: 100%;
+}
+
+// ::ng-deep .your-table .ui-datatable-scrollable-view .ui-datatable-scrollable-body {
+//     max-height: 27vh;
+// }
+
+h3 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.p-datatable-wrapper {
+    margin-top: 20px!important;
+}
+
+th {
+    justify-content: space-between;
+}

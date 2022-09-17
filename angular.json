@@ -28,6 +28,16 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "src/bootstrap4-dark-purple.scss",
+                "bundlename": "saga-blue",
+                "inject": "false"
+              },
+              {
+                "input": "src/bootstrap4-light-purple.scss",
+                "bundlename": "saga-green",
+                "inject": "false"
+              },
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,5 +113,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,43 @@
+<div class="card">
+    <ng-template>
+    </ng-template>
+    <div class="flex" style="display: flex!important; justify-content: space-between; height: 70px; align-items: center;" >
+        <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt)"></button>
+        <div class="field col-12 md:col-2">
+            <p-calendar [(ngModel)]="date" [showIcon]="true" inputId="icon" (onSelect)="loadDataByDate()" (onInput)="onInputCalendar($event.target.value)"></p-calendar>
+        </div>
+    </div>
+    <p-table #dt 
+    [value]="currencies" 
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10,25,50]" 
+    [loading]="loading"
+    [paginator]="true"
+    [rows]="5"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['currencies.code','currencies.currency','currencies.mid']"
+    emptymessage="errorMessages"
+    [scrollable]="true" 
+    scrollHeight="65vh"
+    >
+    <ng-template pTemplate="emptymessage" let-columns>{{errorMessages}}</ng-template>
+        <ng-template pTemplate="header">
+            
+            <tr>
+                <th pSortableColumn="code">Symbol waluty <p-columnFilter type="text" field="product.code" display="menu"></p-columnFilter></th>
+                <th pSortableColumn="currency">Waluta <p-columnFilter type="text" field="product.currency" display="menu"></p-columnFilter></th>
+                <th pSortableColumn="mid">Kurs waluty <p-columnFilter type="text" field="product.mid" display="menu"></p-columnFilter></th>                
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.code}} </td>
+                <td>{{product.currency}}</td>
+                <td>{{product.mid}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <h3>Wybierz widok</h3>
+    <p-selectButton [options]="stateOptions" [(ngModel)]="value1" optionLabel="label" optionValue="value" (onChange)="changeTheme($event.value)"></p-selectButton>
+
+</div>
